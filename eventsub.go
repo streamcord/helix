@@ -48,7 +48,7 @@ type ManyEventSubSubscriptions struct {
 	TotalCost             int                    `json:"total_cost"`
 	MaxTotalCost          int                    `json:"max_total_cost"`
 	EventSubSubscriptions []EventSubSubscription `json:"data"`
-	Pagination            Pagination             `json:"pagination"`
+	Pagination            Pagination             `json:"pagination,omitempty"`
 }
 
 // Response for getting all current subscriptions
