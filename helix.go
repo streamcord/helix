@@ -103,7 +103,7 @@ func (r *Response) HydrateResponseCommon(rc *ResponseCommon) {
 }
 
 type Pagination struct {
-	Cursor string `json:"cursor"`
+	Cursor string `json:"cursor,omitempty"`
 }
 
 // NewClient returns a new Twitch Helix API client. It returns an

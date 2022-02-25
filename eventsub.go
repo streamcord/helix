@@ -26,20 +26,20 @@ type EventSubSubscription struct {
 
 // Conditions for a subscription, not all are necessary and some only apply to some subscription types, see https://dev.twitch.tv/docs/eventsub/eventsub-reference
 type EventSubCondition struct {
-	BroadcasterUserID     string `json:"broadcaster_user_id"`
-	FromBroadcasterUserID string `json:"from_broadcaster_user_id"`
-	ToBroadcasterUserID   string `json:"to_broadcaster_user_id"`
-	RewardID              string `json:"reward_id"`
-	ClientID              string `json:"client_id"`
-	ExtensionClientID     string `json:"extension_client_id"`
-	UserID                string `json:"user_id"`
+	BroadcasterUserID     string `json:"broadcaster_user_id,omitempty"`
+	FromBroadcasterUserID string `json:"from_broadcaster_user_id,omitempty"`
+	ToBroadcasterUserID   string `json:"to_broadcaster_user_id,omitempty"`
+	RewardID              string `json:"reward_id,omitempty"`
+	ClientID              string `json:"client_id,omitempty"`
+	ExtensionClientID     string `json:"extension_client_id,omitempty"`
+	UserID                string `json:"user_id,omitempty"`
 }
 
 // Transport for the subscription, currently the only supported Method is "webhook". Secret must be between 10 and 100 characters
 type EventSubTransport struct {
-	Method   string `json:"method"`
-	Callback string `json:"callback"`
-	Secret   string `json:"secret"`
+	Method   string `json:"method,omitempty"`
+	Callback string `json:"callback,omitempty"`
+	Secret   string `json:"secret,omitempty"`
 }
 
 // Twitch Response for getting all current subscriptions
